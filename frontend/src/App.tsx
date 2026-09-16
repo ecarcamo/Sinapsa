@@ -77,15 +77,14 @@ export default function App() {
           <div className="hero-copy reveal">
             <div className="pill">
               <span className="pill-dot" />
-              Nuevo · Recordatorios por WhatsApp +40% asistencia
+              Nuevo · Módulos por especialidad — activa solo lo que usas
               <span className="pill-arrow">→</span>
             </div>
             <h1>
               El sistema operativo <span className="accent">para tu centro médico.</span>
             </h1>
             <p className="lead">
-              Sinapsa unifica agenda, historia clínica, facturación y comunicación con el paciente en una sola plataforma.
-              Diseñado para <strong>doctores, clínicas y redes</strong> que quieren crecer sin caos.
+              Sinapsa gestiona todo el ciclo del paciente — <strong>citas, expediente clínico, recetas, auditoría y facturación</strong> — con módulos por especialidad para que cada doctor trabaje como necesita, sin pagar de más.
             </p>
 
             <div className="hero-cta">
@@ -94,19 +93,10 @@ export default function App() {
                 <span className="play">▶</span> Ver demo en 2 min
               </a>
             </div>
-            <div className="hero-trust">
-              <div className="avatars" aria-hidden>
-                <span /><span /><span /><span />
-              </div>
-              <div>
-                <strong>+1.200 profesionales</strong> ya gestionan su consulta con Sinapsa
-                <div className="stars" aria-label="Valoración 4.9 de 5">★★★★★ <span>4,9/5 en 340 reseñas</span></div>
-              </div>
-            </div>
             <div className="hero-bullets">
               <span><i>✓</i> Sin permanencia</span>
               <span><i>✓</i> Migración gratuita</span>
-              <span><i>✓</i> Soporte humano en 2h</span>
+              <span><i>✓</i> Soporte en Guatemala</span>
             </div>
           </div>
 
@@ -123,7 +113,7 @@ export default function App() {
                     <small>Pacientes hoy</small><strong>28</strong><em>+6 vs ayer</em>
                   </div>
                   <div className="mini-stat">
-                    <small>Ingresos mes</small><strong>18.420 €</strong><em style={{ color: "#0F766E" }}>+12%</em>
+                    <small>Ingresos mes</small><strong>Q 18,420</strong><em style={{ color: "#0F766E" }}>+12%</em>
                   </div>
                   <div className="mini-stat">
                     <small>No-shows</small><strong>3,2%</strong><em>↓ 41%</em>
@@ -174,16 +164,16 @@ export default function App() {
             </div>
             <div className="float-card float-2">
               <span className="float-icon blue">◈</span>
-              <div><strong>RGPD + ENS</strong><small>Datos en UE · Cifrado AES-256</small></div>
+              <div><strong>Auditoría + Módulos</strong><small>Trazabilidad total por especialidad</small></div>
             </div>
           </div>
         </div>
 
         <div className="container">
           <div className="trust-bar reveal">
-            <small>Confían en Sinapsa</small>
+            <small>Pensado para Guatemala</small>
             <div className="trust-logos">
-              <span>Clínica Levante</span><span>Centro Médico Arco</span><span>Policlínica Norte</span><span>Grupo Salud Vital</span><span>Instituto Derma</span>
+              <span>Clínicas privadas</span><span>Consultorios</span><span>Policlínicas</span><span>Centros de especialidades</span><span>Redes médicas</span>
             </div>
           </div>
         </div>
@@ -196,20 +186,20 @@ export default function App() {
             <div className="problem-card">
               <h3>Sin Sinapsa</h3>
               <ul className="bad-list">
-                <li>Agenda en papeles, Excel y WhatsApps perdidos</li>
-                <li>30% de ausencias que nadie reclama</li>
-                <li>Historia clínica dispersa y facturación manual</li>
-                <li>Horas perdidas cada semana en administración</li>
+                <li>Agenda en papeles, Excel y chats perdidos</li>
+                <li>Expedientes y recetas sin trazabilidad</li>
+                <li>Auditoría imposible: nadie sabe quién editó qué</li>
+                <li>Cobros manuales y reportes que toman días</li>
               </ul>
             </div>
             <div className="solution-card">
               <div className="solution-badge">Con Sinapsa</div>
-              <h3>Todo conectado. Todo bajo control.</h3>
-              <p>Una sola fuente de verdad para tu equipo. Menos fricción, más pacientes atendidos y cobrados a tiempo.</p>
+              <h3>Gestión completa. Auditoría total.</h3>
+              <p>Un solo lugar para <strong>citas, expediente, recetas, órdenes, auditoría y facturación</strong>. Cada acción queda registrada y cada especialidad tiene su módulo.</p>
               <div className="solution-metrics">
-                <div><strong>+22h</strong><span>ahorradas / mes por doctor</span></div>
-                <div><strong>98%</strong><span>confirmaciones asistidas</span></div>
-                <div><strong>2,4×</strong><span>más rápida la facturación</span></div>
+                <div><strong>360°</strong><span>paciente: citas · expediente · recetas</span></div>
+                <div><strong>100%</strong><span>trazable: auditoría por usuario y fecha</span></div>
+                <div><strong>+Módulos</strong><span>por especialidad, activa a demanda</span></div>
               </div>
             </div>
           </div>
@@ -221,17 +211,17 @@ export default function App() {
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">Producto</span>
-            <h2>Todo lo que necesita un centro moderno. <br />Nada que no necesite.</h2>
-            <p>Diseñado con doctores reales. Rápido como debe ser un software clínico: sin esperas, sin formación eterna.</p>
+            <h2>Gestión total del paciente. <br />Auditable y por especialidad.</h2>
+            <p>De la cita a la receta y la factura, todo queda registrado. Activa solo los módulos que tu centro o consultorio necesita.</p>
           </div>
 
           <div className="features reveal">
             <article className="feature feature-wide">
               <div className="feature-copy">
                 <span className="feature-icon teal">▦</span>
-                <h3>Agenda inteligente que evita huecos</h3>
-                <p>Arrastra, bloquea quirófanos, gestiona listas de espera y deja que Sinapsa rellene cancelaciones automáticamente.</p>
-                <ul><li>Recordatorios WhatsApp / SMS / email</li><li>Sala de espera virtual y check-in con QR</li><li>Sincroniza con Google Calendar</li></ul>
+                <h3>Citas y agenda sin fricción</h3>
+                <p>Agenda multi-doctor, multi-sede y por boxes. Lista de espera inteligente y reprogramación en un clic.</p>
+                <ul><li>Recordatorios WhatsApp / SMS / email</li><li>Check-in con QR y sala de espera virtual</li><li>Sincroniza con Google Calendar</li></ul>
               </div>
               <div className="feature-visual">
                 <div className="cal-grid">
@@ -246,11 +236,11 @@ export default function App() {
             </article>
 
             {[
-              { icon: "♥", color: "blue", title: "Historia clínica completa", desc: "Plantillas por especialidad, CIE-10, recetas, consentimientos y firma biométrica. Todo auditable.", bullets: ["Notas con IA: dicta y transcribe", "Adjuntos, imágenes y PACS", "Acceso por roles"] },
-              { icon: "◐", color: "violet", title: "Facturación y cobros", desc: "Presupuestos, facturas, pagos con tarjeta y domiciliación. Conciliación automática.", bullets: ["Verifactu listo", "TPV y Stripe integrado", "Recobro amistoso autom."] },
-              { icon: "◎", color: "teal", title: "Pacientes y comunicación", desc: "Ficha 360º, portal del paciente, recordatorios y campañas que no parecen spam.", bullets: ["Portal y app marca blanca", "NPS y reseñas automáticas", "Consentimientos RGPD"] },
-              { icon: "⬢", color: "amber", title: "Telemedicina integrada", desc: "Videoconsulta con sala de espera, cobro previo y grabación bajo consentimiento.", bullets: ["Sin instalaciones", "Compartir documentos en vivo", "Chat seguro"] },
-              { icon: "⬣", color: "ink", title: "Dirección y analítica", desc: "Ocupación, ingresos por doctor, embudo de captación. Decide con datos, no intuición.", bullets: ["Cuadro de mando en tiempo real", "Exportación contable", "Alertas de rendimiento"] },
+              { icon: "◈", color: "blue", title: "Expediente clínico 360°", desc: "Historia por episodios, signos vitales, alergias, antecedentes y evolución. Todo en un timeline claro.", bullets: ["Plantillas y formularios por especialidad", "CIE-10, adjuntos, imágenes y PACS", "Notas por voz con IA y transcripción"] },
+              { icon: "✎", color: "violet", title: "Recetas y órdenes", desc: "Recetas electrónicas, órdenes de laboratorio e interconsultas con firma y trazabilidad completa.", bullets: ["Recetario con vademécum y dosis", "Envío por WhatsApp / PDF con QR", "Control de vigencia y duplicados"] },
+              { icon: "◎", color: "teal", title: "Pacientes y comunicación", desc: "Ficha única, consentimientos informados y portal del paciente. Comunicación sin perder trazabilidad.", bullets: ["Portal marca blanca + recordatorios", "Consentimientos con firma biométrica", "Historial de contacto centralizado"] },
+              { icon: "⬣", color: "ink", title: "Auditoría completa", desc: "Cada creación, edición y acceso queda registrado: quién, cuándo y qué cambió. Listo para auditoría interna o externa.", bullets: ["Log inmutable por usuario y fecha", "Control de accesos por rol y sede", "Exportable para inspección"] },
+              { icon: "⬢", color: "amber", title: "Facturación y analítica", desc: "Presupuestos, facturas, cobros con tarjeta y reportes por doctor, servicio y sede. Sin Excel.", bullets: ["Cuentas por cobrar y conciliación", "Reportes de ocupación e ingresos en Q", "Exportación contable"] },
             ].map((f) => (
               <article key={f.title} className="feature">
                 <span className={`feature-icon ${f.color}`}>{f.icon}</span>
@@ -264,7 +254,50 @@ export default function App() {
           <div className="integrations reveal">
             <small>Se conecta con lo que ya usas</small>
             <div className="integration-pills">
-              <span>WhatsApp</span><span>Stripe</span><span>Google Calendar</span><span>Holded</span><span>Mailchimp</span><span>Twilio</span><span>Zapier</span><span>API REST</span>
+              <span>WhatsApp</span><span>Google Calendar</span><span>Facturación GT</span><span>Stripe</span><span>Laboratorios</span><span>Zapier</span><span>API REST</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MÓDULOS POR ESPECIALIDAD */}
+      <section className="section section-modulos">
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">Módulos por especialidad</span>
+            <h2>Tu centro, tus especialidades.<br/>Activa solo lo que atiendes.</h2>
+            <p>Cada módulo trae plantillas, formularios, escalas y flujos propios. Paga solo por los que usas. Un mismo paciente, expediente unificado.</p>
+          </div>
+
+          <div className="modulos-grid reveal">
+            {[
+              { icon: "◍", name: "Medicina General", desc: "Consulta integral, control de crónicos y preventivos", tags: ["SOAP", "Signos vitales", "Receta general"] },
+              { icon: "♥", name: "Pediatría", desc: "Curvas OMS, vacunas y desarrollo", tags: ["Percentiles", "Carnet vacunación", "Crecimiento"] },
+              { icon: "◉", name: "Ginecología", desc: "Control prenatal, colposcopía y plan familiar", tags: ["Prenatal", "PAP", "Eco obstétrico"] },
+              { icon: "♡", name: "Cardiología", desc: "Riesgo CV, ECG y seguimiento", tags: ["Framingham", "ECG", "MAPA/Holter"] },
+              { icon: "⬢", name: "Traumatología", desc: "Lesión, cirugía y rehabilitación", tags: ["Dolor EVA", "Órdenes Rx/RM", "Fisioterapia"] },
+              { icon: "✦", name: "Dermatología", desc: "Mapa corporal y seguimiento fotográfico", tags: ["Fotoderma", "Biopsia", "Tratamientos"] },
+              { icon: "◎", name: "Odontología", desc: "Odontograma, endodoncia y presupuestos", tags: ["Odontograma", "Plan tratamiento", "Prótesis"] },
+              { icon: "⬔", name: "Psicología", desc: "Sesiones, escalas y notas privadas", tags: ["PHQ-9 / GAD-7", "Sesión", "Plan terapéutico"] },
+            ].map((m) => (
+              <div key={m.name} className="modulo-card">
+                <span className="modulo-icon">{m.icon}</span>
+                <h4>{m.name}</h4>
+                <p>{m.desc}</p>
+                <div className="modulo-tags">{m.tags.map((t) => <span key={t}>{t}</span>)}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="modulos-foot reveal">
+            <div className="modulos-foot-card">
+              <strong>¿Otra especialidad?</strong>
+              <p>Oftalmología, ORL, Urología, Neurología y más. Crea tu plantilla en minutos o te la configuramos.</p>
+            </div>
+            <div className="modulos-foot-list">
+              <span>✓ Un expediente, múltiples especialidades</span>
+              <span>✓ Activa/desactiva por doctor y sede</span>
+              <span>✓ Todo auditable: quién atendió y qué registró</span>
             </div>
           </div>
         </div>
@@ -364,20 +397,20 @@ export default function App() {
             <div className="price-card">
               <div className="price-head">
                 <h3>Esencial</h3>
-                <p>Para el profesional que quiere orden y tiempo.</p>
+                <p>Para el profesional que quiere orden total.</p>
                 <div className="price">
-                  <span className="currency">€</span>
-                  <span className="amount">{price(29)}</span>
+                  <span className="currency">Q</span>
+                  <span className="amount">{price(299).toLocaleString("es-GT")}</span>
                   <span className="per">/ mes por profesional</span>
                 </div>
-                {annual && <small className="price-note">29 € en mensual · facturado anual</small>}
+                {annual && <small className="price-note">Q299 en mensual · facturado anual</small>}
               </div>
               <ul className="price-list">
-                <li>Agenda y pacientes ilimitados</li>
-                <li>Historia clínica + plantillas</li>
+                <li>Citas, pacientes y expediente ilimitados</li>
+                <li>Recetas y órdenes electrónicas</li>
+                <li>1 módulo de especialidad incluido</li>
                 <li>Recordatorios WhatsApp/SMS (500/mes)</li>
-                <li>Portal del paciente</li>
-                <li>Soporte por chat en 2h</li>
+                <li>Auditoría básica + portal del paciente</li>
               </ul>
               <button className="btn btn-white btn-block" onClick={() => showToast("¡Plan Esencial seleccionado! Te llevamos al checkout.")}>Probar 14 días gratis</button>
               <small className="price-foot">Sin tarjeta · Migración incluida</small>
@@ -388,23 +421,23 @@ export default function App() {
               <div className="price-badge">Más popular</div>
               <div className="price-head">
                 <h3>Profesional</h3>
-                <p>Para clínicas que quieren crecer sin contratar.</p>
+                <p>Para clínicas con varias especialidades.</p>
                 <div className="price">
-                  <span className="currency">€</span>
-                  <span className="amount">{price(59)}</span>
+                  <span className="currency">Q</span>
+                  <span className="amount">{price(599).toLocaleString("es-GT")}</span>
                   <span className="per">/ mes por profesional</span>
                 </div>
-                {annual && <small className="price-note">59 € en mensual · facturado anual</small>}
+                {annual && <small className="price-note">Q599 en mensual · facturado anual</small>}
               </div>
               <ul className="price-list">
                 <li><strong>Todo lo de Esencial, más:</strong></li>
-                <li>Facturación, presupuestos y TPV</li>
-                <li>Telemedicina ilimitada</li>
-                <li>Gestión de boxes y turnos</li>
+                <li>3 módulos de especialidad incluidos</li>
+                <li>Facturación, presupuestos y cobros en Q</li>
                 <li>Recordatorios ilimitados + campañas</li>
-                <li>Informes de rentabilidad</li>
+                <li>Gestión de boxes, turnos y auditoría completa</li>
+                <li>Reportes por doctor / especialidad</li>
               </ul>
-              <button className="btn btn-primary btn-block" onClick={() => showToast("¡Plan Profesional seleccionado! Redirigiendo a Stripe…")}>Elegir Profesional</button>
+              <button className="btn btn-primary btn-block" onClick={() => showToast("¡Plan Profesional seleccionado! Redirigiendo a checkout…")}>Elegir Profesional</button>
               <small className="price-foot">Onboarding 1:1 incluido · Setup en 48h</small>
             </div>
 
@@ -412,17 +445,18 @@ export default function App() {
             <div className="price-card">
               <div className="price-head">
                 <h3>Centro</h3>
-                <p>Para centros y policlínicas multi-equipo.</p>
+                <p>Para centros y policlínicas multi-sede.</p>
                 <div className="price">
-                  <span className="currency">€</span>
-                  <span className="amount">{price(129)}</span>
+                  <span className="currency">Q</span>
+                  <span className="amount">{price(1290).toLocaleString("es-GT")}</span>
                   <span className="per">/ mes · hasta 10 prof.</span>
                 </div>
-                {annual && <small className="price-note">Incluye 10 profesionales · +12 € / extra</small>}
+                {annual && <small className="price-note">Incluye 10 profesionales · +Q129 / extra</small>}
               </div>
               <ul className="price-list">
+                <li>Módulos ilimitados por especialidad</li>
                 <li>Multi-sede y consolidado</li>
-                <li>Roles granulares + auditoría</li>
+                <li>Roles granulares + auditoría inmutable</li>
                 <li>Stock, compras y comisiones</li>
                 <li>API, webhooks, HL7/FHIR</li>
                 <li>Gestor de cuenta dedicado</li>
@@ -434,8 +468,8 @@ export default function App() {
 
           <div className="pricing-enterprise reveal">
             <div>
-              <h4>¿Red o grupo hospitalario?</h4>
-              <p>SSO, ENS Alto, interoperabilidad y facturación centralizada. Despliegue asistido.</p>
+              <h4>¿Red o grupo con varias sedes?</h4>
+              <p>Módulos ilimitados, SSO, interoperabilidad y facturación centralizada. Despliegue asistido.</p>
             </div>
             <div className="enterprise-cta">
               <a href="#demo" className="btn btn-ink">Solicitar propuesta</a>
@@ -450,7 +484,7 @@ export default function App() {
               <p>Si no ahorras tiempo en el primer mes, te devolvemos el importe. Sin preguntas.</p>
             </div>
             <div className="guarantee-badges">
-              <span>RGPD</span><span>ENS</span><span>ISO 27001</span><span>Datos en UE</span>
+              <span>Auditoría total</span><span>Datos en GT</span><span>ISO 27001</span><span>Cifrado AES-256</span>
             </div>
           </div>
 
@@ -460,10 +494,11 @@ export default function App() {
               <table className="compare-table">
                 <thead><tr><th></th><th>Esencial</th><th>Profesional</th><th>Centro</th></tr></thead>
                 <tbody>
-                  <tr><td>Agenda · Pacientes · Historia</td><td>●</td><td>●</td><td>●</td></tr>
+                  <tr><td>Citas · Expediente · Recetas</td><td>●</td><td>●</td><td>●</td></tr>
+                  <tr><td>Módulos por especialidad</td><td>1 incluido</td><td>3 incluidos</td><td>Ilimitados</td></tr>
+                  <tr><td>Auditoría trazable</td><td>Básica</td><td>Completa</td><td>Inmutable</td></tr>
                   <tr><td>Recordatorios WhatsApp</td><td>500/mes</td><td>Ilimitados</td><td>Ilimitados</td></tr>
-                  <tr><td>Facturación y pagos online</td><td>—</td><td>●</td><td>●</td></tr>
-                  <tr><td>Telemedicina</td><td>—</td><td>●</td><td>●</td></tr>
+                  <tr><td>Facturación y cobros en Q</td><td>—</td><td>●</td><td>●</td></tr>
                   <tr><td>Multi-sede · API · HL7</td><td>—</td><td>—</td><td>●</td></tr>
                 </tbody>
               </table>
@@ -520,12 +555,12 @@ export default function App() {
           </div>
           <div className="faq reveal">
             {[
-              { q: "¿Necesito tarjeta para probar?", a: "No. 14 días gratis sin tarjeta. Si decides quedarte, eliges plan y pagas. Si no, tus datos se borran automáticamente." },
-              { q: "¿Migran mis datos de mi software actual?", a: "Sí, gratis. Importamos pacientes, citas e historial desde Excel, Google Sheets, Clinic Cloud, Doctoralia, Archivex y la mayoría de softwares del mercado. Media: 1,8 días." },
-              { q: "¿Es seguro y cumple RGPD / ENS?", a: "Sí. Cifrado en tránsito y reposo (AES-256), copias diarias, datos alojados en UE (España), DPA y registro de actividades incluidos. Cumplimos RGPD y Esquema Nacional de Seguridad." },
-              { q: "¿Puedo usar mi propio dominio y marca?", a: "En Profesional y Centro sí: portal del paciente con tu logo, colores y dominio (ej. pacientes.tuclinica.es). En Esencial, con marca Sinapsa." },
-              { q: "¿Qué pasa si cancelo?", a: "Puedes exportar todo en CSV/PDF en un clic. Sin permanencia. Con 1 mes de aviso, borramos o te entregamos copia completa." },
-              { q: "¿Facturación y Verifactu?", a: "Facturas, presupuestos, tickets y cobros con TPV/Stripe. Preparado para Verifactu y con exportación contable para Holded, Sage y A3." },
+              { q: "¿Necesito tarjeta para probar?", a: "No. 14 días gratis sin tarjeta. Si decides quedarte, eliges plan en quetzales (GTQ) y pagas. Si no, tus datos se borran automáticamente." },
+              { q: "¿Migran mis datos de mi software actual?", a: "Sí, gratis. Importamos pacientes, citas, expedientes y recetas desde Excel, Google Sheets, Clinic Cloud, Doctoralia u otro software. Te entregamos todo auditado." },
+              { q: "¿Es seguro y auditable?", a: "Sí. Cifrado AES-256, copias diarias, control por roles y auditoría inmutable: cada acción queda registrada con usuario, fecha y cambio realizado. Cumple buenas prácticas de protección de datos." },
+              { q: "¿Cómo funcionan los módulos por especialidad?", a: "Activas solo lo que atiendes: pediatría, ginecología, cardiología, derma, odonto, etc. Cada módulo trae sus plantillas y flujos. Puedes añadir o quitar módulos por doctor o sede y el expediente sigue unificado." },
+              { q: "¿Qué pasa si cancelo?", a: "Exportas todo (citas, expedientes, recetas, auditoría) en CSV/PDF en un clic. Sin permanencia." },
+              { q: "¿Facturación en quetzales?", a: "Sí. Presupuestos, facturas, recibos y cobros en GTQ, con control de cuentas por cobrar, caja y reportes por doctor y especialidad. Exportación contable incluida." },
             ].map((f, i) => (
               <div key={f.q} className={`faq-item ${openFaq === i ? "open" : ""}`}>
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i}>
@@ -563,8 +598,8 @@ export default function App() {
               <div className="cta-card cta-card-2">
                 <div className="cta-card-head"><span>Factura #2841</span><span>Pagada</span></div>
                 <div className="cta-card-body">
-                  <strong>420,00 €</strong>
-                  <span>TPV · Visa •• 4242</span>
+                  <strong>Q 420.00</strong>
+                  <span>Efectivo / Tarjeta •• 4242</span>
                 </div>
               </div>
             </div>
@@ -581,8 +616,8 @@ export default function App() {
                 <span className="brand-mark small"><svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#0F766E" /><path d="M14 7c-1.2 2.2-3.6 3.1-5.5 2.6 1.1 1.6 1 3.8-.4 5.3 1.9-.5 3.9.2 5 1.8 1.1-1.6 3.1-2.3 5-1.8-1.4-1.5-1.5-3.7-.4-5.3-1.9.5-4.3-.4-5.5-2.6Z" fill="white" /></svg></span>
                 <span className="brand-name">sinapsa</span>
               </a>
-              <p>Sistema operativo para centros médicos y doctores. Agenda, historia clínica, facturación y comunicación en un solo lugar.</p>
-              <small>Hecho con ♥ en España · Datos alojados en UE</small>
+              <p>Sistema operativo para centros médicos y doctores. Citas, expediente, recetas, auditoría y facturación — con módulos por especialidad.</p>
+              <small>Hecho con ♥ para Guatemala · Soporte local</small>
             </div>
             <div>
               <strong>Producto</strong>
@@ -594,12 +629,12 @@ export default function App() {
             </div>
             <div>
               <strong>Contacto</strong>
-              <a href="mailto:hola@sinapsa.health">hola@sinapsa.health</a><a href="tel:+34900000000">900 000 000</a><span className="footer-muted">L–V 9:00–19:00 CET</span>
+              <a href="mailto:hola@sinapsa.health">hola@sinapsa.health</a><a href="tel:+50200000000">+502 0000 0000</a><span className="footer-muted">L–V 8:00–18:00 GT</span>
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Sinapsa Health SL. Todos los derechos reservados.</span>
-            <span className="footer-badges"><span>RGPD</span><span>ENS</span><span>Verifactu</span><span>HL7 FHIR</span></span>
+            <span>© {new Date().getFullYear()} Sinapsa Health. Todos los derechos reservados.</span>
+            <span className="footer-badges"><span>Auditoría</span><span>Q · GTQ</span><span>HL7 FHIR</span><span>Módulos</span></span>
           </div>
         </div>
       </footer>
