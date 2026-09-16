@@ -1,0 +1,33 @@
+# Binarios y compilaciones de Go
+backend/server
+backend/*.exe
+*.test
+*.out
+
+# Dependencias y builds de Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+
+# Archivos de entorno sensibles (mantener .env.example en git)
+.env
+!.env.example
+
+# Logs y depuración
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Docker
+.docker/
+
+# Sistemas operativos y editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
