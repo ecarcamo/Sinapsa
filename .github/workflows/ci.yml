@@ -1,10 +1,9 @@
-name: CI Pipeline
+name: Release CI/CD Pipeline
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  release:
+    types: [ published ]
+  workflow_dispatch:
 
 jobs:
   backend-ci:
@@ -56,3 +55,24 @@ jobs:
 
       - name: Build & Typecheck Frontend
         run: npm run build
+
+  deploy:
+    name: Trigger Production Deployments
+    needs: [backend-ci, frontend-ci]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render (si RENDER_DEPLOY_HOOK está configurado)
+        if: ${{ env.RENDER_DEPLOY_HOOK != '' }}
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          echo "Notificando a Render para desplegar la nueva release..."
+          curl -s -X POST "$RENDER_DEPLOY_HOOK"
+
+      - name: Deploy to Vercel (si VERCEL_DEPLOY_HOOK está configurado)
+        if: ${{ env.VERCEL_DEPLOY_HOOK != '' }}
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          echo "Notificando a Vercel para desplegar la nueva release..."
+          curl -s -X POST "$VERCEL_DEPLOY_HOOK"
