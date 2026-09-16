@@ -1,79 +1,34 @@
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 
-const API_BASE = import.meta.env.VITE_API_URL || ''
-
-export const App: React.FC = () => {
-  const [systemStatus, setSystemStatus] = useState<string>('Verificando...')
-  const [isOnline, setIsOnline] = useState<boolean>(false)
-
-  useEffect(() => {
-    fetch(`${API_BASE}/api/health`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === 'ok') {
-          setIsOnline(true)
-          setSystemStatus('Sistema en línea')
-        } else {
-          setIsOnline(false)
-          setSystemStatus('Sistema degradado')
-        }
-      })
-      .catch(() => {
-        setIsOnline(false)
-        setSystemStatus('Sin conexión')
-      })
-  }, [])
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="saas-layout">
-      {/* Sidebar */}
-      <aside className="saas-sidebar">
-        <div className="sidebar-header">
-          <div className="brand-group">
-            <span className="brand-title gradient-text">SINAPSA</span>
-            <span className="brand-badge">SaaS Médico</span>
-          </div>
-        </div>
-
-        {/* Espacio vacío para navegación de módulos médicos */}
-        <div className="sidebar-nav">
-          {/* Aquí empezaremos a agregar los menús: Pacientes, Citas, Médicos, etc. */}
-        </div>
-
-        {/* Pie de Sidebar con estado del sistema */}
-        <div className="sidebar-footer">
-          <div className="system-pill">
-            <span className={`status-indicator-dot ${isOnline ? 'online' : 'offline'}`}></span>
-            <span className="system-status-text">{systemStatus}</span>
-          </div>
-        </div>
-      </aside>
-
-      {/* Área Principal */}
-      <div className="saas-main">
-        {/* Barra superior */}
-        <header className="topbar">
-          <div className="topbar-left">
-            <span className="view-title">Espacio de Trabajo</span>
-          </div>
-          <div className="topbar-right">
-            {/* Espacio para acciones o perfil */}
-          </div>
-        </header>
-
-        {/* Pantalla principal vacía */}
-        <main className="content-viewport">
-          <div className="empty-workspace-canvas">
-            <div className="canvas-content">
-              <span className="canvas-icon">🏥</span>
-              <h2>Centro Médico</h2>
-              <p>Espacio principal vacío listo para diseñar el primer módulo.</p>
-            </div>
-          </div>
-        </main>
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank" rel="noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-    </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   )
 }
 

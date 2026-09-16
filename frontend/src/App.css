@@ -1,165 +1,42 @@
-/* Layout Base SaaS */
-.saas-layout {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  background-color: var(--bg-primary, #0a0d14);
-}
-
-/* Sidebar */
-.saas-sidebar {
-  width: 260px;
-  min-width: 260px;
-  background: rgba(14, 18, 28, 0.95);
-  border-right: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  backdrop-filter: blur(12px);
-}
-
-.sidebar-header {
-  padding: 24px 20px;
-  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.06));
-}
-
-.brand-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.brand-badge {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 3px 8px;
-  border-radius: 6px;
-  background: rgba(6, 182, 212, 0.12);
-  color: #22d3ee;
-  border: 1px solid rgba(6, 182, 212, 0.25);
-}
-
-.sidebar-nav {
-  flex: 1;
-  padding: 20px 16px;
-  overflow-y: auto;
-}
-
-.sidebar-footer {
-  padding: 16px 20px;
-  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.06));
-}
-
-.system-pill {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.06));
-  border-radius: 8px;
-}
-
-.status-indicator-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.status-indicator-dot.online {
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-}
-
-.status-indicator-dot.offline {
-  background: #f43f5e;
-  box-shadow: 0 0 8px #f43f5e;
-}
-
-.system-status-text {
-  font-size: 0.8rem;
-  color: var(--text-secondary, #94a3b8);
-  font-weight: 500;
-}
-
-/* Área Principal */
-.saas-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Barra Superior */
-.topbar {
-  height: 64px;
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
-  background: rgba(10, 13, 20, 0.6);
-  backdrop-filter: blur(12px);
-}
-
-.view-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-primary, #f1f5f9);
-}
-
-/* Viewport de Contenido */
-.content-viewport {
-  flex: 1;
-  padding: 32px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.empty-workspace-canvas {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  background: rgba(18, 24, 38, 0.25);
-  padding: 40px;
-}
-
-.canvas-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
   text-align: center;
 }
 
-.canvas-icon {
-  font-size: 2.5rem;
-  margin-bottom: 4px;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.canvas-content h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text-primary, #f1f5f9);
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.canvas-content p {
-  color: var(--text-secondary, #94a3b8);
-  font-size: 0.95rem;
-  max-width: 420px;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
