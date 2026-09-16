@@ -40,6 +40,11 @@ services:
       DB_PASSWORD: ${DB_PASSWORD:-postgres}
       DB_NAME: ${DB_NAME:-sinapsa_db}
       DB_SSLMODE: disable
+      JWT_SECRET: ${JWT_SECRET:-dev-super-secret-change-in-production-32chars!}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-Sinapsa <onboarding@resend.dev>}
+      OTP_EXPIRY_MINUTES: ${OTP_EXPIRY_MINUTES:-10}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
     ports:
       - "8080:8080"
     depends_on:
