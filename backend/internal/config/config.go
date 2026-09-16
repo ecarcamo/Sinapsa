@@ -1,8 +1,10 @@
 package config
 
 import (
+	"net/url"
 	"os"
 	"strconv"
+	"strings"
 )
 
 type Config struct {
@@ -26,7 +28,7 @@ func Load() *Config {
 	if otpMin <= 0 {
 		otpMin = 10
 	}
-	return &Config{
+	cfg := &Config{
 		Port:         getEnv("PORT", "8080"),
 		AppEnv:       getEnv("APP_ENV", "development"),
 		DBHost:       getEnv("DB_HOST", "localhost"),
@@ -41,6 +43,28 @@ func Load() *Config {
 		OTPExpiryMin: otpMin,
 		FrontendURL:  getEnv("FRONTEND_URL", "http://localhost:5173"),
 	}
+	// Render y otros PaaS entregan DATABASE_URL — si existe, la parseamos y sobreescribe DB_*
+	if dbURL := os.Getenv("DATABASE_URL"); dbURL != "" {
+		if u, err := url.Parse(dbURL); err == nil {
+			cfg.DBHost = u.Hostname()
+			if p := u.Port(); p != "" {
+				cfg.DBPort = p
+			}
+			if u.User != nil {
+				cfg.DBUser = u.User.Username()
+				if pw, ok := u.User.Password(); ok {
+					cfg.DBPassword = pw
+				}
+			}
+			cfg.DBName = strings.TrimPrefix(u.Path, "/")
+			if q := u.Query().Get("sslmode"); q != "" {
+				cfg.DBSSLMode = q
+			} else {
+				cfg.DBSSLMode = "require"
+			}
+		}
+	}
+	return cfg
 }
 
 func getEnv(k, fallback string) string {
