@@ -39,20 +39,9 @@ jobs:
             HEADER="### 📦 Cambios desde ${PREV_TAG} hasta ${TAG_NAME}"
           fi
 
-          cat <<EOF > notes.md
-          $HEADER
-
-          #### 📝 Commits incluidos en esta versión:
-          EOF
-
+          printf "%s\n\n#### 📝 Commits incluidos en esta versión:\n" "$HEADER" > notes.md
           git log "$RANGE" --pretty=format:"* %s ([%h](https://github.com/${{ github.repository }}/commit/%H))" >> notes.md
-
-          cat <<EOF >> notes.md
-
-
-          ---
-          **Full Changelog**: https://github.com/${{ github.repository }}/commits/${TAG_NAME}
-          EOF
+          printf "\n\n---\n**Full Changelog**: https://github.com/%s/commits/%s\n" "${{ github.repository }}" "$TAG_NAME" >> notes.md
 
           gh release edit "$TAG_NAME" --notes-file notes.md
           echo "Notas del release actualizadas con éxito."
@@ -111,19 +100,18 @@ jobs:
     name: Trigger Production Deployments
     needs: [backend-ci, frontend-ci]
     runs-on: ubuntu-latest
+    env:
+      RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
     steps:
-      - name: Deploy to Render (si RENDER_DEPLOY_HOOK está configurado)
-        if: ${{ env.RENDER_DEPLOY_HOOK != '' }}
-        env:
-          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+      - name: Deploy to Render
+        if: env.RENDER_DEPLOY_HOOK != ''
         run: |
           echo "Notificando a Render para desplegar la nueva release..."
-          curl -s -X POST "$RENDER_DEPLOY_HOOK"
+          curl -s -w "\nHTTP Status: %{http_code}\n" -X POST "$RENDER_DEPLOY_HOOK"
 
-      - name: Deploy to Vercel (si VERCEL_DEPLOY_HOOK está configurado)
-        if: ${{ env.VERCEL_DEPLOY_HOOK != '' }}
-        env:
-          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+      - name: Deploy to Vercel
+        if: env.VERCEL_DEPLOY_HOOK != ''
         run: |
           echo "Notificando a Vercel para desplegar la nueva release..."
-          curl -s -X POST "$VERCEL_DEPLOY_HOOK"
+          curl -s -w "\nHTTP Status: %{http_code}\n" -X POST "$VERCEL_DEPLOY_HOOK"
