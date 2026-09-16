@@ -55,15 +55,9 @@ func main() {
 
 	// 3. Registrar rutas HTTP (Mux de Go 1.22+)
 	mux := http.NewServeMux()
-	itemHandler := handlers.NewItemHandler(db)
 
-	// Health check
+	// Health check (Verificación de salud y estado de la base de datos)
 	mux.HandleFunc("GET /api/health", handlers.HealthHandler(cfg, db))
-
-	// Items CRUD
-	mux.HandleFunc("GET /api/items", itemHandler.ListItems)
-	mux.HandleFunc("POST /api/items", itemHandler.CreateItem)
-	mux.HandleFunc("DELETE /api/items/{id}", itemHandler.DeleteItem)
 
 	// Envolver con Middlewares
 	handlerWithMiddlewares := loggingMiddleware(corsMiddleware(mux))

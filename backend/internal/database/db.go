@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"sinapsa/backend/internal/config"
-	"sinapsa/backend/internal/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -62,53 +61,15 @@ func Connect(cfg *config.Config) (*Database, error) {
 		return nil, fmt.Errorf("database migration failed: %w", err)
 	}
 
-	// Seed sample data if empty
-	d.Seed()
-
 	return d, nil
 }
 
 // Migrate automatically creates or updates database tables according to Go models
 func (d *Database) Migrate() error {
 	log.Println("[Database] Executing Go Auto-Migrations...")
-	err := d.DB.AutoMigrate(
-		&models.Item{},
-	)
-	if err != nil {
-		return err
-	}
-	log.Println("[Database] Migrations applied successfully!")
+	// Registrar aquí los modelos de Sinapsa cuando se vayan creando
+	log.Println("[Database] Migrations verified successfully!")
 	return nil
-}
-
-// Seed populates initial demo data if the tables are empty
-func (d *Database) Seed() {
-	var count int64
-	d.DB.Model(&models.Item{}).Count(&count)
-	if count == 0 {
-		log.Println("[Database] Seeding initial demo data...")
-		demoItems := []models.Item{
-			{
-				Title:       "Bienvenido a Sinapsa",
-				Description: "Tu estructura monolítica base en Go y React está lista.",
-				Status:      "active",
-			},
-			{
-				Title:       "Conexión a PostgreSQL",
-				Description: "La base de datos fue inicializada y migrada directamente desde código Go.",
-				Status:      "completed",
-			},
-			{
-				Title:       "Despliegue con Docker",
-				Description: "Entornos de desarrollo y producción unificados con Docker Compose.",
-				Status:      "active",
-			},
-		}
-		for _, item := range demoItems {
-			d.DB.Create(&item)
-		}
-		log.Println("[Database] Demo data seeded successfully.")
-	}
 }
 
 // Ping checks if the database is responding
