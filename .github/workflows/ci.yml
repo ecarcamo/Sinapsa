@@ -5,7 +5,58 @@ on:
     types: [ published ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
+  generate-release-notes:
+    name: Generate Detailed Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Full History
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate Changelog and Update Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: ${{ github.event.release.tag_name }}
+        run: |
+          if [ -z "$TAG_NAME" ]; then
+            echo "Ejecución manual: no se actualiza release notes."
+            exit 0
+          fi
+
+          # Buscar el tag anterior
+          PREV_TAG=$(git describe --tags --abbrev=0 "${TAG_NAME}^" 2>/dev/null || "")
+          
+          if [ -z "$PREV_TAG" ]; then
+            RANGE="${TAG_NAME}"
+            HEADER="### 🚀 Primer Release: ${TAG_NAME}"
+          else
+            RANGE="${PREV_TAG}..${TAG_NAME}"
+            HEADER="### 📦 Cambios desde ${PREV_TAG} hasta ${TAG_NAME}"
+          fi
+
+          cat <<EOF > notes.md
+          $HEADER
+
+          #### 📝 Commits incluidos en esta versión:
+          EOF
+
+          git log "$RANGE" --pretty=format:"* %s ([%h](https://github.com/${{ github.repository }}/commit/%H))" >> notes.md
+
+          cat <<EOF >> notes.md
+
+
+          ---
+          **Full Changelog**: https://github.com/${{ github.repository }}/commits/${TAG_NAME}
+          EOF
+
+          gh release edit "$TAG_NAME" --notes-file notes.md
+          echo "Notas del release actualizadas con éxito."
+
   backend-ci:
     name: Backend CI (Go)
     runs-on: ubuntu-latest
