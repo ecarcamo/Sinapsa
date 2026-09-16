@@ -18,6 +18,8 @@ interface Item {
   updatedAt: string
 }
 
+const API_BASE = import.meta.env.VITE_API_URL || ''
+
 export const App: React.FC = () => {
   const [health, setHealth] = useState<HealthData | null>(null)
   const [healthLoading, setHealthLoading] = useState<boolean>(true)
@@ -35,7 +37,7 @@ export const App: React.FC = () => {
     setHealthLoading(true)
     const startTime = performance.now()
     try {
-      const res = await fetch('/api/health')
+      const res = await fetch(`${API_BASE}/api/health`)
       const endTime = performance.now()
       setLatency(Math.round(endTime - startTime))
 
@@ -57,7 +59,7 @@ export const App: React.FC = () => {
   const fetchItems = useCallback(async () => {
     setItemsLoading(true)
     try {
-      const res = await fetch('/api/items')
+      const res = await fetch(`${API_BASE}/api/items`)
       if (res.ok) {
         const data: Item[] = await res.json()
         setItems(Array.isArray(data) ? data : [])
@@ -85,7 +87,7 @@ export const App: React.FC = () => {
 
     setCreating(true)
     try {
-      const res = await fetch('/api/items', {
+      const res = await fetch(`${API_BASE}/api/items`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -110,7 +112,7 @@ export const App: React.FC = () => {
   // Delete Item handler
   const handleDeleteItem = async (id: number) => {
     try {
-      const res = await fetch(`/api/items/${id}`, {
+      const res = await fetch(`${API_BASE}/api/items/${id}`, {
         method: 'DELETE',
       })
       if (res.ok) {
